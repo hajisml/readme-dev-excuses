@@ -28,13 +28,11 @@ function generateSVG(quote: string, params: Record<string, string>): string {
   } = params;
 
   // Colors based on the theme
-  const bgColor = theme === "dark" ? "#1a1a1a" : "#ffffff";
   const textColor = theme === "dark" ? "#ffffff" : "#000000";
 
   return `
     <svg xmlns="http://www.w3.org/2000/svg" width="${card_width}" height="${card_height}">
-      <rect width="100%" height="100%" fill="${bgColor}" />
-      <text x="25" y="100" fill="${textColor}" font-size="${font_size}" font-family="${font_family}">
+      <text x="0" y="0" fill="${textColor}" font-size="${font_size}" font-family="${font_family}">
         ${quote}
       </text>
     </svg>
