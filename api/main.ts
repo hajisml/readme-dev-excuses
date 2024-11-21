@@ -32,7 +32,7 @@ function generateSVG(quote: string, params: Record<string, string>): string {
 
   return `
     <svg xmlns="http://www.w3.org/2000/svg" width="${card_width}" height="${card_height}">
-      <text x="0" y="0" fill="${textColor}" font-size="${font_size}" font-family="${font_family}">
+      <text x="25" y="25" fill="${textColor}" font-size="${font_size}" font-family="${font_family}">
         ${quote}
       </text>
     </svg>
