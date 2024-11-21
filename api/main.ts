@@ -40,3 +40,17 @@ function generateSVG(quote: string, params: Record<string, string>): string {
     </svg>
   `;
 }
+
+// Start the server
+serve(async (req) => {
+  // Parse query parameters
+  const url = new URL(req.url);
+  const params = Object.fromEntries(url.searchParams.entries());
+
+  const quote = await fetchQuote();
+  const svg = generateSVG(quote, params);
+
+  return new Response(svg, {
+    headers: { "Content-Type": "image/svg+xml" },
+  });
+});
